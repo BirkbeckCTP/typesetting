@@ -49,7 +49,7 @@ def send_proofreader_assign_notification(**kwargs):
         }
         notify_helpers.send_email_with_body_from_user(
             request,
-            'Proofing Request',
+            'subject_typesetting_notify_proofreader',
             assignment.proofreader.email,
             message,
             log_dict=log_dict,
@@ -96,7 +96,7 @@ def send_proofreader_assign_transaction_email(**kwargs):
     notify_helpers.send_email_with_body_from_setting_template(
         request,
         'typesetting_proofreader_{}'.format(event_type),
-        'Proofreader Assignment {}'.format(event_type),
+        'subject_typesetting_proofreader_{}'.format(event_type),
         message_target,
         context={
             'assignment': assignment,
@@ -173,7 +173,7 @@ def send_typesetting_assign_decision(**kwargs):
     notify_helpers.send_email_with_body_from_setting_template(
         request,
         'typsetting_typesetter_decision_{}'.format(decision),
-        'Typesetting Assignment Decision',
+        'subject_typsetting_typesetter_decision_{}'.format(decision),
         assignment.manager.email,
         context={'assignment': assignment, 'note': note},
         log_dict=log_dict,
@@ -201,7 +201,7 @@ def send_typesetting_assign_cancelled(**kwargs):
     notify_helpers.send_email_with_body_from_setting_template(
         request,
         'typesetting_typesetter_cancelled',
-        'Typesetting Assignment Cancelled',
+        'subject_typesetting_typesetter_cancelled',
         assignment.typesetter.email,
         context={'assignment': assignment},
         log_dict=log_dict,
@@ -229,7 +229,7 @@ def send_typesetting_assign_deleted(**kwargs):
     notify_helpers.send_email_with_body_from_setting_template(
         request,
         'typesetting_typesetter_deleted',
-        'Typesetting Assignment Deleted',
+        'subject_typesetting_typesetter_deleted',
         assignment.typesetter.email,
         context={'assignment': assignment},
         log_dict=log_dict,
@@ -260,7 +260,7 @@ def send_typesetting_assign_complete(**kwargs):
     notify_helpers.send_email_with_body_from_setting_template(
         request,
         'typesetting_typesetter_complete',
-        'Typesetting Assignment Complete',
+        'subject_typesetting_typesetter_complete',
         assignment.manager.email,
         context={
             'assignment': assignment,
