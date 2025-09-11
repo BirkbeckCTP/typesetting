@@ -1,3 +1,6 @@
+# ARCHIVED
+This plugin has been archived since its worfklow is now part of Janeway since v1.8.0 (https://github.com/openlibhums/janeway/pull/4612)
+
 # typesetting
 This is a plugin for Janeway that replaces the Production and Proofing stages with an alternative process.
 
